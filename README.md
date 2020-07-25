@@ -2,7 +2,7 @@
 
 [![Docker Repository on Quay](https://quay.io/repository/arosh/mimetex/status "Docker Repository on Quay")](https://quay.io/repository/arosh/mimetex)
 
-This is a container image which serves [mimetex.cgi](http://www.forkosh.com/mimetex.html)
+This is a container image which serves [mimetex.cgi](http://www.forkosh.com/mimetex.html).
 
 ## How to use
 
