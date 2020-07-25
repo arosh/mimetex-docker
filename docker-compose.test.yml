@@ -1,0 +1,11 @@
+# https://docs.docker.com/compose/compose-file/#environment
+version: '3'
+services:
+  mimetex:
+    build:
+      context: .
+
+  sut:
+    build:
+      context: test
+    command: ./test.sh
