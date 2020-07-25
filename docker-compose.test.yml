@@ -1,11 +1,13 @@
 # https://docs.docker.com/compose/compose-file/#environment
-version: '3'
+version: '3.8'
 services:
   mimetex:
     build:
       context: .
 
   sut:
-    build:
-      context: test
+    image: quay.io/cybozu/ubuntu:18.04
+    volumes:
+      - ./test:/work:ro
+    working_dir: /work
     command: ./test.sh
