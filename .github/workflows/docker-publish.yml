@@ -26,8 +26,8 @@ jobs:
         run: |
           if [ -f docker-compose.test.yml ]; then
             docker-compose --file docker-compose.test.yml build
-            docker-compose --file docker-compose.test.yml up -d mimetex
-            docker-compose --file docker-compose.test.yml run sut
+            docker-compose --file docker-compose.test.yml up -d sut
+            docker-compose --file docker-compose.test.yml run runner
           else
             docker build . --file Dockerfile
           fi
