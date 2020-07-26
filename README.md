@@ -1,6 +1,8 @@
 # mimetex-docker
 
-[![Docker Repository on Quay](https://quay.io/repository/arosh/mimetex/status "Docker Repository on Quay")](https://quay.io/repository/arosh/mimetex)
+![Publish Docker Container
+](https://github.com/arosh/mimetex-docker/workflows/Publish%20Docker%20Container/badge.svg)
+ [![Docker Repository on Quay](https://quay.io/repository/arosh/mimetex/status "Docker Repository on Quay")](https://quay.io/repository/arosh/mimetex)
 
 This is a container image which serves [mimetex.cgi](http://www.forkosh.com/mimetex.html).
 
