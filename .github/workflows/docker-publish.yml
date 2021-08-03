@@ -41,10 +41,18 @@ jobs:
     if: github.event_name == 'push'
     steps:
       - uses: actions/checkout@v2
+
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME
-      - name: Log into registry
-        run: echo "${{ secrets.QUAY_ROBOT_TOKEN }}" | docker login quay.io -u ${{ secrets.QUAY_ROBOT_NAME }} --password-stdin
+
+      - name: Login to Quay.io
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
+        with:
+          registry: quay.io
+          username: ${{ secrets.QUAY_ROBOT_NAME }}
+          password: ${{ secrets.QUAY_ROBOT_TOKEN }}
+
       - name: Push image
         run: |
           IMAGE_ID=quay.io/arosh/$IMAGE_NAME
