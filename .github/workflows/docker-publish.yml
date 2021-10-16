@@ -40,7 +40,8 @@ jobs:
     # Ensure test job passes before pushing image.
     needs: test
     runs-on: ubuntu-latest
-    if: github.event_name in ['push', 'workflow_dispatch']
+    # https://docs.github.com/en/actions/learn-github-actions/expressions#contains
+    if: contains(['push', 'workflow_dispatch'], github.event_name)
     steps:
       - uses: actions/checkout@v2
 
