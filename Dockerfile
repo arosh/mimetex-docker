@@ -1,4 +1,4 @@
-FROM httpd:2.4.41
+FROM httpd:2.4-bullseye
 # https://pythonspeed.com/articles/security-updates-in-docker/
 RUN apt-get update \
   && apt-get -y upgrade \
